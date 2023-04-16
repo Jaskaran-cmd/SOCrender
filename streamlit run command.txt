@@ -1,0 +1,1 @@
+streamlit run "C:\Users\Asus\Desktop\FYP\streamlit_app.py"
