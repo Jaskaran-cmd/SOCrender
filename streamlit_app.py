@@ -4,10 +4,11 @@ import numpy as np
 import pickle
 import streamlit as st
 import time
+import joblib
 from streamlit_option_menu import option_menu
 
 
-loaded_model1=pickle.load(open("trained_model.sav",'rb')) 
+loaded_model1=joblib.load("trained_model.sav")
 ########################################################################
 #################LSTM Model#############################################
 # class LSTMModel(torch.nn.Module):
