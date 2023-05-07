@@ -47,8 +47,8 @@ model3='Deep Neural Network'
 ## sidebar for navigation
 with st.sidebar:
     selected=option_menu('SOC prediction',
-                         [model1,model2,model3],
-                         icons=['1-circle','2-square','3-circle'],
+                         [model1,model2],
+                         icons=['1-circle','2-square'],
                          default_index=0)
     
 
@@ -145,12 +145,5 @@ elif(selected==model2):
         res=st.success(f'{rr:.2f}')
 
 else:
-    st.title(f'SOC prediction using {model3}')
-    SumVolatge=st.text_input('total Voltage')
-    Current=st.text_input("Current Value")
-    RemainCap=st.text_input("Remaining capacity of the battery")
-    MaxV=st.text_input("Maximum volatge at that instant")
-    MinV=st.text_input("Min Volatge at that instant")
-    MaxT=st.text_input('Max Temperature at that instant')
-    MinT=st.text_input("Min Temperature at that instant")
+    pass
 
