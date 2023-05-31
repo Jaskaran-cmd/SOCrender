@@ -1,14 +1,16 @@
 import streamlit as st
 import random
 import numpy as np
+import pandas as pd
 import pickle
 import streamlit as st
 import time
-import joblib
 from streamlit_option_menu import option_menu
 
+import joblib
 
-loaded_model1=joblib.load("trained_model.sav")
+loaded_model1 = joblib.load("trained_model.sav")
+
 ########################################################################
 #################LSTM Model#############################################
 # class LSTMModel(torch.nn.Module):
@@ -79,6 +81,7 @@ if (selected==model1):
     """,unsafe_allow_html=True)
     
     st.title('SOC Prediction using Linear Regression')
+    
     col1,col2,col3=st.columns(3)
 
     with col1:
@@ -106,7 +109,7 @@ if (selected==model1):
         for percent_complete in range(100):
             time.sleep(0.0001)
             my_bar.progress(percent_complete + 1, text=progress_text)
-        soc=loaded_model1.predict([[Float(x) for x in inp_array]])
+        soc=loaded_model1.predict([[float(x) for x in inp_array]])
         res=st.success(f'{soc[0]:.2f}')
     
 
@@ -139,11 +142,10 @@ elif(selected==model2):
         for percent_complete in range(100):
             time.sleep(0.1)
             my_bar.progress(percent_complete + 1, text=progress_text)
-        soc=loaded_model1.predict([[Float(x) for x in inp_array]])
+        soc=loaded_model1.predict([[float(x) for x in inp_array]])
         r=random.uniform(-1,1)
         rr= soc[0]+r
         res=st.success(f'{rr:.2f}')
-
 else:
     pass
 
